@@ -3,10 +3,9 @@ phases:
   install:
     commands:
       - npm install time
-      - aws cloudformation package --template-file cloudformation.yaml --s3-bucket codepipeline-us-west-2-124978640664 
-                                   --output-template-file outputSamTemplate.yaml
+      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket cicd-testing-serverless --output-template-file outputSamTemplate.yaml
 artifacts:
   type: zip
   files:
-    - cloudformation.yaml
+    - samTemplate.yaml
     - outputSamTemplate.yaml
