@@ -1,3 +1,4 @@
+timeApi:  
   Type: AWS::ApiGateway::RestApi
   Properties:
     Name: timeApi

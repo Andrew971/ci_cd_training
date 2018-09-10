@@ -2,25 +2,7 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Outputs the time
 Resources:
-  TimeFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      FunctionName: TimeFunction
-      Description: this is a desc
-      MemorySize: 128
-      Timeout: 3
-      Handler: index.handler
-      Runtime: nodejs8.10
-      CodeUri: ./
-      Events:
-        MyTimeApiStage:
-          Type: Api
-          Properties:
-            Path: /TimeResource
-            Method: GET
-            RestApiId: !Ref 
-  timeApi:
-    'Fn::Transform':
-      Name: 'AWS::Include'
-      Parameters:
-        Location : "s3://cicd-testing-serverless/partials/apiGateWay/restApi.yaml"
+  'Fn::Transform':
+    Name: 'AWS::Include'
+    Parameters:
+      Location : "s3://cicd-testing-serverless/partials/resources.yaml"
