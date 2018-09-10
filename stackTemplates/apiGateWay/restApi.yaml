@@ -29,14 +29,5 @@
       Integration:
         Type: "AWS"
         Uri:
-          Fn::Join:
-            - ""
-            - - "arn:aws:apigateway:"
-              - !Ref "AWS::Region"
-              - ":lambda:path/"
-              - "/2015-03-31/functions/"
-              - Fn::GetAtt:
-                - TimeFunction
-                - Arn
-              - "/invocations"
+          Fn::Sub: "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${TimeFunction.Arn}/invocations"
         IntegrationHttpMethod: "GET"
