@@ -30,15 +30,9 @@ Resources:
     Properties:
       Name: timeApi
       StageName: Stage
-      Cors:
-        AllowMethods: GET,POST,DELETE 
-        AllowHeaders: X-Forwarded-For 
   timeApiProd:
     Type: AWS::Serverless::Api
     Properties:
       Name: timeApi
       StageName: Prod
-      Cors:
-        AllowMethods: GET,POST,DELETE 
-        AllowHeaders: X-Forwarded-For 
 
