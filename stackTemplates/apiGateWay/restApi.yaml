@@ -1,0 +1,42 @@
+  timeApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: timeApi
+      Description: this is a des for API
+      FailOnWarnings: true
+      ApiKeySourceType: AUTHORIZER
+      Parameters:
+        endpointConfigurationTypes: EDGE
+  timeApiResource:
+    Type: "AWS::ApiGateway::Resource"
+    Properties:
+      ParentId:
+        Fn::GetAtt:
+          - "timeApi"
+          - "RootResourceId"
+      PathPart: "dev"
+      RestApiId:
+        Ref: timeApi
+  timeApitMethod:
+    Type: "AWS::ApiGateway::Method"
+    Properties:
+      HttpMethod: "GET"
+      AuthorizationType: "NONE"
+      ResourceId:
+        Ref: timeApiResource
+      RestApiId:
+        Ref: timeApi
+      Integration:
+        Type: "AWS"
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:aws:apigateway:"
+              - !Ref "AWS::Region"
+              - ":lambda:path/"
+              - "/2015-03-31/functions/"
+              - Fn::GetAtt:
+                - TimeFunction
+                - Arn
+              - "/invocations"
+        IntegrationHttpMethod: "GET"

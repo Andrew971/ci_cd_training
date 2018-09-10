@@ -2,8 +2,9 @@ version: 0.2
 phases:
   install:
     commands:
+      - aws s3 sync ./stackTemplates s3://cicd-testing-serverless/partials/ --exclude './stackTemplates/samTemplate.yaml'
       - npm install
-      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket cicd-testing-serverless --output-template-file outputSamTemplate.yaml
+      - aws cloudformation package --template-file ./stackTemplates/samTemplate.yaml --s3-bucket cicd-testing-serverless --output-template-file outputSamTemplate.yaml
 artifacts:
   type: zip
   files:
