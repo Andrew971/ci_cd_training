@@ -18,8 +18,9 @@ Resources:
           Properties:
             Path: /TimeResource
             Method: GET
-            RestApiId: !Ref timeApi
-  'Fn::Transform':
-    Name: 'AWS::Include'
-    Parameters:
-      Location : "s3://cicd-testing-serverless/partials/apiGateWay/restApi.yaml"
+            RestApiId: !Ref 
+  timeApi:
+    'Fn::Transform':
+      Name: 'AWS::Include'
+      Parameters:
+        Location : "s3://cicd-testing-serverless/partials/apiGateWay/restApi.yaml"
