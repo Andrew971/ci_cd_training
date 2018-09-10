@@ -5,6 +5,10 @@ Resources:
   TimeFunction:
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: TimeFunction
+      Description: this is a desc
+      MemorySize: 128
+      Timeout: 3
       Handler: index.handler
       Runtime: nodejs8.10
       CodeUri: ./
@@ -14,3 +18,21 @@ Resources:
           Properties:
             Path: /TimeResource
             Method: GET
+  TimeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: TimeFunction
+      Description: this is a desc
+      MemorySize: 128
+      Timeout: 3
+      Handler: index.handler
+      Runtime: nodejs8.10
+      CodeUri: ./
+      Events:
+        MyTimeApi:
+          Type: Api
+          Properties:
+            Path: /TimeResource
+            Method: POST
+
+
