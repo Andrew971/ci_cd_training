@@ -30,7 +30,6 @@ Resources:
     Properties:
       Name: timeApi
       StageName: Stage
-      DefinitionBody: this is desc Stage
       Cors:
         AllowMethods: GET,POST,DELETE 
         AllowHeaders: X-Forwarded-For 
@@ -39,7 +38,6 @@ Resources:
     Properties:
       Name: timeApi
       StageName: Prod
-      DefinitionBody: this is desc Prod
       Cors:
         AllowMethods: GET,POST,DELETE 
         AllowHeaders: X-Forwarded-For 
