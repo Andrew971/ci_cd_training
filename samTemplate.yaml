@@ -18,13 +18,13 @@ Resources:
           Properties:
             Path: /TimeResource
             Method: GET
-            RestApiId: !ref timeApiStage
+            RestApiId: !Ref timeApiStage
         MyTimeApiProd:
           Type: Api
           Properties:
             Path: /TimeResource
             Method: POST
-            RestApiId: !ref timeApiProd
+            RestApiId: !Ref timeApiProd
   timeApiStage:
     Type: AWS::Serverless::Api
     Properties:
