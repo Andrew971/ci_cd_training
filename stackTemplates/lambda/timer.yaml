@@ -14,5 +14,3 @@ TimeFunction:
         Properties:
           Path: /TimeResource
           Method: GET
-          RestApiId: 
-            Ref : timeApi
