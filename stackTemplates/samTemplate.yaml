@@ -38,16 +38,16 @@ Resources:
       RestApiId:
         Ref: timeApi
   timeApitMethod:
-  Type: "AWS::ApiGateway::Method"
-  Properties:
-    HttpMethod: "GET"
-    AuthorizationType: "NONE"
-    ResourceId:
-      Ref: timeApiResource
-    RestApiId:
-      Ref: timeApi
-    Integration:
-      Type: "AWS"
-      Uri:
-        Fn::Sub: "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${TimeFunction.Arn}/invocations"
-      IntegrationHttpMethod: "GET"
+    Type: "AWS::ApiGateway::Method"
+    Properties:
+      HttpMethod: "GET"
+      AuthorizationType: "NONE"
+      ResourceId:
+        Ref: timeApiResource
+      RestApiId:
+        Ref: timeApi
+      Integration:
+        Type: "AWS"
+        Uri:
+          Fn::Sub: "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${TimeFunction.Arn}/invocations"
+        IntegrationHttpMethod: "GET"
