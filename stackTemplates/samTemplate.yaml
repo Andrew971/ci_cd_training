@@ -37,7 +37,7 @@ Resources:
           Fn::Sub: "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${TimeFunction.Arn}/invocations"
         IntegrationHttpMethod: "GET"
   timeApiDeploymentStage: 
-      Type: AWS::ApiGateway::Deployment,
+      Type: AWS::ApiGateway::Deployment
       Properties:
         RestApiId:
           Ref: timeApi
