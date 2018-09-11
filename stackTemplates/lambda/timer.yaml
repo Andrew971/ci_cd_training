@@ -1,5 +1,4 @@
-TimeFunction:
-  Type: AWS::Serverless::Function
+Type: AWS::Serverless::Function
   Properties:
     FunctionName: TimeFunction
     Description: this is a desc
@@ -14,3 +13,5 @@ TimeFunction:
         Properties:
           Path: /TimeResource
           Method: GET
+          RestApiId: 
+            Ref: timeApi

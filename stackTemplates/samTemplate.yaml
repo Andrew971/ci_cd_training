@@ -3,30 +3,15 @@ Transform: AWS::Serverless-2016-10-31
 Description: Outputs the time
 Resources:
   TimeFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      FunctionName: TimeFunction
-      Description: this is a desc
-      MemorySize: 128
-      Timeout: 3
-      Handler: index.handler
-      Runtime: nodejs8.10
-      CodeUri: ./
-      Events:
-        MyTimeApiStage:
-          Type: Api
-          Properties:
-            Path: /TimeResource
-            Method: GET
-  timeApi:  
-    Type: AWS::ApiGateway::RestApi
-    Properties:
-      Name: timeApi
-      Description: this is a des for API
-      FailOnWarnings: true
-      ApiKeySourceType: AUTHORIZER
+    Fn::Transform:
+      Name: 'AWS::Include'
       Parameters:
-        endpointConfigurationTypes: EDGE
+        Location : "s3://cicd-testing-serverless/partials/lambda/timer.yaml"
+  timeApi:  
+    Fn::Transform:
+      Name: 'AWS::Include'
+      Parameters:
+        Location : "s3://cicd-testing-serverless/partials/apiGateWay/restApi.yaml"
   timeApiResource:
     Type: "AWS::ApiGateway::Resource"
     Properties:
@@ -51,3 +36,12 @@ Resources:
         Uri:
           Fn::Sub: "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${TimeFunction.Arn}/invocations"
         IntegrationHttpMethod: "GET"
+  timeApiDeploymentStage: 
+      Type: AWS::ApiGateway::Deployment,
+      Properties:
+        RestApiId:
+          Ref: timeApi
+        Description: Staging deployment of our Api
+        StageName: Stage
+    
+    
