@@ -9,9 +9,9 @@ Resources:
       Description: this is a desc
       MemorySize: 128
       Timeout: 3
-      Handler: timerFunction/index.handler
+      Handler: index.handler
       Runtime: nodejs8.10
-      CodeUri: ../codebase/
+      CodeUri: ../codebase/timerFunction
   timeApi:  
     Type: AWS::ApiGateway::RestApi
     Properties:
