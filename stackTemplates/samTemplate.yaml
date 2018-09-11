@@ -3,15 +3,24 @@ Transform: AWS::Serverless-2016-10-31
 Description: Outputs the time
 Resources:
   timeApi:  
-    Fn::Transform:
-      Name: 'AWS::Include'
-      Parameters:
-        Location : "s3://cicd-testing-serverless/partials/apiGateWay/restApi.yaml"
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: TimeFunction
+      Description: this is a desc
+      MemorySize: 128
+      Timeout: 3
+      Handler: timerFunction/index.handler
+      Runtime: nodejs8.10
+      CodeUri: ../codebase/
   TimeFunction:
-    Fn::Transform:
-      Name: 'AWS::Include'
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: timeApi
+      Description: this is a des for API
+      FailOnWarnings: true
+      ApiKeySourceType: AUTHORIZER
       Parameters:
-        Location : "s3://cicd-testing-serverless/partials/lambda/timer.yaml"
+        endpointConfigurationTypes: EDGE
   timeApiResource:
     Type: "AWS::ApiGateway::Resource"
     Properties:
