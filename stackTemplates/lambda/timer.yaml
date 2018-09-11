@@ -6,6 +6,5 @@ Properties:
   Timeout: 3
   Handler: timerFunction/index.handler
   Runtime: nodejs8.10
-  CodeUri: 
-    Bucket: cicd-testing-serverless
-    Key: codebase/timerFunction/
+  CodeUri: 's3://cicd-testing-serverless/codebase/timerFunction'
+
