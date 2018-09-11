@@ -6,4 +6,4 @@ Properties:
   Timeout: 3
   Handler: index.handler
   Runtime: nodejs8.10
-  CodeUri: ../../timeFunction
+  CodeUri: ./timeFunction/
