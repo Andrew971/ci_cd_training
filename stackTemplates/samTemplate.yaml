@@ -2,16 +2,16 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Outputs the time
 Resources:
-  TimeFunction:
-    Fn::Transform:
-      Name: 'AWS::Include'
-      Parameters:
-        Location : "s3://cicd-testing-serverless/partials/lambda/timer.yaml"
   timeApi:  
     Fn::Transform:
       Name: 'AWS::Include'
       Parameters:
         Location : "s3://cicd-testing-serverless/partials/apiGateWay/restApi.yaml"
+  TimeFunction:
+    Fn::Transform:
+      Name: 'AWS::Include'
+      Parameters:
+        Location : "s3://cicd-testing-serverless/partials/lambda/timer.yaml"
   timeApiResource:
     Type: "AWS::ApiGateway::Resource"
     Properties:
