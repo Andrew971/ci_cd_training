@@ -8,4 +8,4 @@ Properties:
   Runtime: nodejs8.10
   CodeUri: 
     Bucket: cicd-testing-serverless
-      Key: codebase/timerFunction/
+    Key: codebase/timerFunction/
