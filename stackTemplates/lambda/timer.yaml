@@ -4,6 +4,6 @@ Properties:
   Description: this is a desc
   MemorySize: 128
   Timeout: 3
-  Handler: index.handler
+  Handler: timerFunction/index.handler
   Runtime: nodejs8.10
-  CodeUri: timerFunction/
+  CodeUri: ./timerFunction/
