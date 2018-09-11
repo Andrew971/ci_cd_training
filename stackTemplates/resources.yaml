@@ -2,8 +2,8 @@ Fn::Transform:
   Name: 'AWS::Include'
   Parameters:
     Location : "s3://cicd-testing-serverless/partials/lambda/timer.yaml"
-#RestApi resources
-#Fn::Transform:
-#  Name: 'AWS::Include'
-#  Parameters:
-#    Location : "s3://cicd-testing-serverless/partials/apiGateWay/restApi.yaml"
+# RestApi resources
+Fn::Transform:
+  Name: 'AWS::Include'
+  Parameters:
+    Location : "s3://cicd-testing-serverless/partials/apiGateWay/restApi.yaml"
