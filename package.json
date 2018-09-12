@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --watch",
-    "installation": "node installation.js"
+    "installation": "DIR='src/' node installation.js",
+    "install-build": "DIR='build/src/' node installation.js"
   },
   "keywords": [],
   "author": "",
