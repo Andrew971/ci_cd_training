@@ -12,8 +12,9 @@ phases:
   build:
     commands:
       - npm run build
+      - ls -al
 artifacts:
   type: zip
   files:
-    - main.yml
+    - ./build/templates/main.yaml
     - outputSamTemplate
