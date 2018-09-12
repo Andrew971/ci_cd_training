@@ -120,6 +120,6 @@ module.exports = {
     extensions: [".js", ".json", ".jsx", ".yaml", "yml"]
   },
   externals: {
-    bindings: 'require("bindings")'
+    // bindings: 'require("bindings")'
   }
 };

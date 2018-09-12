@@ -2,15 +2,18 @@ version: 0.2
 phases:
   install:
     commands:
+      - npm install
       - aws cloudformation package --template-file ./build/templates/main.yaml --s3-bucket cicd-testing-serverless --output-template-file outputSamTemplate.yaml
       - ls -al
   pre_build:
     commands:
       - ls -al
-      - npm install
+      - npm run build
   build:
     commands:
-      - npm run build
+      - ls -al
+  post-build:
+    commands:
       - ls -al
 artifacts:
   type: zip
