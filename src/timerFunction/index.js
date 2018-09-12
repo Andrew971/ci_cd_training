@@ -1,5 +1,4 @@
-import time from 'time';
-//testing my 
+//testing my function
 exports.handler = (event, context, callback) => {
     var currentTime = new time.Date(); 
     currentTime.setTimezone("America/Los_Angeles");

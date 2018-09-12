@@ -7,8 +7,8 @@ const {Type} = require('js-yaml');
 
 let types = [];
 
-const entryArray = glob.sync('./src/**/index.js');
-
+const entryArray = glob.sync('./src/*/index.js');
+console.log(entryArray)
 const srcObject = entryArray.reduce((acc, item) => {
   const name = item;
   acc[name] = item;
@@ -45,6 +45,11 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto",
+      },
       {
         "test": /\.jsx?$/,
         include: [path.resolve(__dirname, "src")],

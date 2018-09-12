@@ -1,0 +1,212 @@
+{
+  "jobs": [
+    {
+      "id": "j-1",
+      "title": "Executive Project Manager",
+      "location": "Shanghai, China",
+      "description": "We are looking for a master multi-tasker with excellent communication skills and an upbeat attitude. Candidates should be able to assist management and all visitors to the company by handling office tasks, providing polite and professional assistance via phone, mail, and e-mail, making reservations or travel arrangements, and generally being a helpful and positive presence in the workplace.\n\nTo be successful as an Administrative Assistant, candidates should be professional, polite, and attentive while also being accurate. They should always be prepared and responsive, willing to meet each challenge directly. Administrative Assistants must be comfortable with computers, general office tasks, and excel at both verbal and written communication. Most importantly, Administrative Assistants should have a genuine desire to meet the needs of others.\n\n## Administrative Assistant Responsibilities:\n* Handling office tasks, such as filing, generating reports and presentations, setting up for meetings, and reordering supplies.\n* Providing real-time scheduling support by booking appointments and preventing conflicts.\n* Making travel arrangements, such as booking flights, cars, and making hotel and restaurant reservations.\n* Screening phone calls and routing callers to the appropriate party.\n* Using computers to generate reports, transcribe minutes from meetings, create presentations, and conduct research.\n* Greet and assist visitors.\n* Maintain polite and professional communication via phone, e-mail, and mail.\n* Anticipate the needs of others in order to ensure their seamless and positive experience.\n\n## Administrative Assistant Requirements:\n* Associate’s Degree in related field.\n* Prior administrative experience.\n* Excellent computer skills, especially typing.\n* Attention to detail.\n* Multilingual may be preferred or required.\n* Desire to be proactive and create a positive experience for others.",
+      "status": "Live",
+      "stage": "Shortlist"
+    },
+    {
+      "id": "j-2",
+      "title": "Systems Administration",
+      "location": "San Francisco, United States",
+      "description": "",
+      "status": "Live",
+      "stage": "Offer"
+    },
+    {
+      "id": "j-3",
+      "title": "Senior Designer",
+      "location": "Beijing, China",
+      "description": "",
+      "status": "Done",
+      "stage": "Hire"
+    },
+    {
+      "id": "j-4",
+      "title": "",
+      "location": "",
+      "description": "",
+      "status": "Draft",
+      "stage": "Draft"
+    }
+  ],
+  "postings": [
+    {
+      "id": "p-1",
+      "jobId": "j-1",
+      "platform": "LinkedIn",
+      "link": "https://www.linkedin.com/job/90247502",
+      "postedAt": "Mon, 25 Jun 2018 09:59:27 GMT",
+      "details": ""
+    },
+    {
+      "id": "p-2",
+      "jobId": "j-1",
+      "platform": "WeChat",
+      "link": "we://ubc-jobs/jjFI30wfCejdkwfnc",
+      "postedAt": "Mon, 23 Jun 2018 07:38:24 GMT",
+      "details": ""
+    },
+    {
+      "id": "p-3",
+      "jobId": "j-2",
+      "platform": "LinkedIn",
+      "link": "https://www.linkedin.com/job/83362943",
+      "postedAt": "Mon, 21 Jun 2018 11:23:55 GMT",
+      "details": ""
+    }
+  ],
+  "jobTemplates": [
+    {
+      "id": "jt-1",
+      "title": "Executive Project Manager",
+      "description": "Description Goes Here #1.",
+      "tags": [
+        "Business",
+        "Management",
+        "Coordinator",
+        "Supervisor"
+      ]
+    },
+    {
+      "id": "jt-2",
+      "title": "Full-stack Developer",
+      "description": "Description Goes Here #2.",
+      "tags": [
+        "Software",
+        "Web Developer"
+      ]
+    },
+    {
+      "id": "jt-3",
+      "title": "Dev Ops Engineer",
+      "description": "Description Goes Here #3.",
+      "tags": [
+        "Software",
+        "Maintainance",
+        "IT"
+      ]
+    }
+  ],
+  "applicants": [
+    {
+      "id": "a-1",
+      "jobId": "j-1",
+      "candidateId": "c-1",
+      "stage": "Application",
+      "createdAt": "Wed, 23 Jun 2018 10:23:55 GMT"
+    },
+    {
+      "id": "a-2",
+      "jobId": "j-1",
+      "candidateId": "c-2",
+      "stage": "Shortlist",
+      "createdAt": "Wed, 23 Jun 2018 14:21:55 GMT"
+    },
+    {
+      "id": "a-3",
+      "jobId": "j-1",
+      "candidateId": "c-3",
+      "stage": "Shortlist",
+      "createdAt": "Thu, 24 Jun 2018 11:23:55 GMT"
+    },
+    {
+      "id": "a-4",
+      "jobId": "j-2",
+      "candidateId": "c-4",
+      "stage": "Background Check",
+      "createdAt": "Thu, 24 Jun 2018 18:20:55 GMT"
+    },
+    {
+      "id": "a-5",
+      "jobId": "j-2",
+      "candidateId": "c-5",
+      "stage": "Offer",
+      "createdAt": "Fri, 26 Jun 2018 19:10:55 GMT"
+    }
+  ],
+  "applicantComments": [
+    {
+      "id": "ac-1",
+      "applicantId": "a-1",
+      "author": "Blake Hawkins",
+      "content": "She's indifferent to ratings, competition, corporate concerns, and, generally speaking, consequences."
+    },
+    {
+      "id": "ac-2",
+      "applicantId": "a-1",
+      "author": "Dave Norman",
+      "content": "Didn't think you'd know that, but the point's still the same-- it's time for Don Quixote!"
+    },
+    {
+      "id": "ac-3",
+      "applicantId": "a-1",
+      "author": "Blake Hawkins",
+      "content": "That didn't sound like something that should come with a warning, that sounded like something that should come with balloons."
+    },
+    {
+      "id": "ac-4",
+      "applicantId": "a-1",
+      "author": "Dave Norman",
+      "content": "All I'm saying is that Mackenzie MacHale shouted 'Now' and Will started swinging away."
+    },
+    {
+      "id": "ac-5",
+      "applicantId": "a-1",
+      "author": "Christina Ball",
+      "content": "Internal security is handling it. But I have to give you a rotten assignment."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "c-1",
+      "firstname": "Joe",
+      "lastname": "Ridell",
+      "occupation": "Assistant Manager"
+    },
+    {
+      "id": "c-2",
+      "firstname": "Mark",
+      "lastname": "Grey",
+      "occupation": "Account Director"
+    },
+    {
+      "id": "c-3",
+      "firstname": "Cindy",
+      "lastname": "Crowley",
+      "occupation": "Senior Account Manager"
+    },
+    {
+      "id": "c-4",
+      "firstname": "May",
+      "lastname": "Trowell",
+      "occupation": "Commercial Director"
+    },
+    {
+      "id": "c-5",
+      "firstname": "Sung",
+      "lastname": "Zhao",
+      "occupation": "Sales Manager"
+    },
+    {
+      "id": "c-6",
+      "firstname": "Derek",
+      "lastname": "Edwards",
+      "occupation": "Sales Director"
+    },
+    {
+      "id": "c-7",
+      "firstname": "Trevor",
+      "lastname": "Garza",
+      "occupation": "Account Manager"
+    }
+  ],
+  "events": [
+    {
+      "id": "e-1"
+    }
+  ]
+}

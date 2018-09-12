@@ -1,0 +1,326 @@
+{
+  "JobsTable": [
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "j-1"
+          },
+          "Title": {
+            "S": "Executive Project Manager"
+          },
+          "Location": {
+            "S": "Shanghai, China"
+          },
+          "Description": {
+            "S": "We are looking for a master multi-tasker with excellent communication skills and an upbeat attitude. Candidates should be able to assist management and all visitors to the company by handling office tasks, providing polite and professional assistance via phone, mail, and e-mail, making reservations or travel arrangements, and generally being a helpful and positive presence in the workplace.\n\nTo be successful as an Administrative Assistant, candidates should be professional, polite, and attentive while also being accurate. They should always be prepared and responsive, willing to meet each challenge directly. Administrative Assistants must be comfortable with computers, general office tasks, and excel at both verbal and written communication. Most importantly, Administrative Assistants should have a genuine desire to meet the needs of others.\n\n## Administrative Assistant Responsibilities:\n* Handling office tasks, such as filing, generating reports and presentations, setting up for meetings, and reordering supplies.\n* Providing real-time scheduling support by booking appointments and preventing conflicts.\n* Making travel arrangements, such as booking flights, cars, and making hotel and restaurant reservations.\n* Screening phone calls and routing callers to the appropriate party.\n* Using computers to generate reports, transcribe minutes from meetings, create presentations, and conduct research.\n* Greet and assist visitors.\n* Maintain polite and professional communication via phone, e-mail, and mail.\n* Anticipate the needs of others in order to ensure their seamless and positive experience.\n\n## Administrative Assistant Requirements:\n* Associate’s Degree in related field.\n* Prior administrative experience.\n* Excellent computer skills, especially typing.\n* Attention to detail.\n* Multilingual may be preferred or required.\n* Desire to be proactive and create a positive experience for others."
+          },
+          "Status": {
+            "S": "Live"
+          },
+          "Stage": {
+            "S": "Shortlist"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "j-2"
+          },
+          "Title": {
+            "S": "Systems Administration"
+          },
+          "Location": {
+            "S": "San Francisco, United States"
+          },
+          "Status": {
+            "S": "Live"
+          },
+          "Stage": {
+            "S": "Offer"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "j-3"
+          },
+          "Title": {
+            "S": "Senior Designer"
+          },
+          "Location": {
+            "S": "Beijing, China"
+          },
+          "Status": {
+            "S": "Done"
+          },
+          "Stage": {
+            "S": "Hire"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "j-4"
+          },
+          "Title": {
+            "S": "Executive Project Manager"
+          },
+          "Location": {
+            "S": "Shanghai, China"
+          },
+          "Status": {
+            "S": "draft"
+          },
+          "Stage": {
+            "S": "draft"
+          }
+        }
+      }
+    }
+  ],
+  "CandidateTable": [
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "c-1"
+          },
+          "Firstname": {
+            "S": "Joe"
+          },
+          "Lastname": {
+            "S": "Shanghai, China"
+          },
+          "Occupation": {
+            "S": "Assistant Manager"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "c-2"
+          },
+          "Firstname": {
+            "S": "Mark"
+          },
+          "Lastname": {
+            "S": "Shanghai, China"
+          },
+          "Occupation": {
+            "S": "Account Director"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "c-3"
+          },
+          "Firstname": {
+            "S": "Cindy"
+          },
+          "Lastname": {
+            "S": "Shanghai, China"
+          },
+          "Occupation": {
+            "S": "Senior Account Manager"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "c-4"
+          },
+          "Firstname": {
+            "S": "May"
+          },
+          "Lastname": {
+            "S": "Shanghai, China"
+          },
+          "Occupation": {
+            "S": "Commercial Director"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "c-5"
+          },
+          "Firstname": {
+            "S": "Sung"
+          },
+          "Lastname": {
+            "S": "Shanghai, China"
+          },
+          "Occupation": {
+            "S": "Sales Manager"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "c-6"
+          },
+          "Firstname": {
+            "S": "Derek"
+          },
+          "Lastname": {
+            "S": "Shanghai, China"
+          },
+          "Occupation": {
+            "S": "Sales Director"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "c-7"
+          },
+          "Firstname": {
+            "S": "Trevor"
+          },
+          "Lastname": {
+            "S": "Shanghai, China"
+          },
+          "Occupation": {
+            "S": "Account Manager"
+          }
+        }
+      }
+    }
+  ],
+  "ApplicantTable": [
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "a-1"
+          },
+          "JobID": {
+            "S": "j-1"
+          },
+          "CandidateID": {
+            "S": "c-1"
+          },
+          "Stage": {
+            "S": "Application"
+          },
+          "CreatedAt": {
+            "S": "Assistant Manager"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "a-2"
+          },
+          "JobID": {
+            "S": "j-1"
+          },
+          "CandidateID": {
+            "S": "c-2"
+          },
+          "Stage": {
+            "S": "Shortlist"
+          },
+          "CreatedAt": {
+            "S": "Assistant Manager"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "a-3"
+          },
+          "JobID": {
+            "S": "j-1"
+          },
+          "CandidateID": {
+            "S": "c-3"
+          },
+          "Stage": {
+            "S": "Shortlist"
+          },
+          "CreatedAt": {
+            "S": "Assistant Manager"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "a-4"
+          },
+          "JobID": {
+            "S": "j-2"
+          },
+          "CandidateID": {
+            "S": "c-4"
+          },
+          "Stage": {
+            "S": "Background Check"
+          },
+          "CreatedAt": {
+            "S": "Assistant Manager"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Id": {
+            "S": "a-5"
+          },
+          "JobID": {
+            "S": "j-2"
+          },
+          "CandidateID": {
+            "S": "c-5"
+          },
+          "Stage": {
+            "S": "Offer"
+          },
+          "CreatedAt": {
+            "S": "Assistant Manager"
+          }
+        }
+      }
+    }
+  ]
+}
