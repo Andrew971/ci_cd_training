@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Transform: 'AWS::Serverless-2016-10-31'
+Transform: AWS::Serverless-2016-10-31
 Description: "Outputs the time"
 Resources:
   TimeFunction:
@@ -11,7 +11,7 @@ Resources:
       Timeout: 3
       Handler: "index.handler"
       Runtime: "nodejs8.10"
-      CodeUri: "../codebase/timerFunction"
+      CodeUri: "../src/timerFunction"
   timeApi:  
     Type: "AWS::ApiGateway::RestApi"
     Properties:
@@ -52,5 +52,4 @@ Resources:
         Ref: "timeApi"
       Description: "Staging deployment of our Api"
       StageName: "Stage"
-    
     

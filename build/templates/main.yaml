@@ -1,0 +1,55 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Outputs the time
+Resources:
+  TimeFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: TimeFunction
+      Description: this is a desc
+      MemorySize: 128
+      Timeout: 3
+      Handler: index.handler
+      Runtime: nodejs8.10
+      CodeUri: ../src/timerFunction
+  timeApi:
+    Type: 'AWS::ApiGateway::RestApi'
+    Properties:
+      Name: timeApi
+      Description: this is a des for API
+      FailOnWarnings: true
+      ApiKeySourceType: AUTHORIZER
+      Parameters:
+        endpointConfigurationTypes: EDGE
+  timeApiResource:
+    Type: 'AWS::ApiGateway::Resource'
+    Properties:
+      ParentId:
+        'Fn::GetAtt':
+          - timeApi
+          - RootResourceId
+      PathPart: stage
+      RestApiId:
+        Ref: timeApi
+  timeApitMethod:
+    Type: 'AWS::ApiGateway::Method'
+    Properties:
+      HttpMethod: GET
+      AuthorizationType: NONE
+      ResourceId:
+        Ref: timeApiResource
+      RestApiId:
+        Ref: timeApi
+      Integration:
+        Type: AWS
+        Uri:
+          'Fn::Sub': >-
+            arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${TimeFunction.Arn}/invocations
+        IntegrationHttpMethod: GET
+  timeApiDeploymentStage:
+    Type: 'AWS::ApiGateway::Deployment'
+    Properties:
+      RestApiId:
+        Ref: timeApi
+      Description: Staging deployment of our Api
+      StageName: Stage

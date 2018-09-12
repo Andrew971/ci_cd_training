@@ -1,4 +1,4 @@
-var time = require('time');
+import time from 'time';
 //testing my 
 exports.handler = (event, context, callback) => {
     var currentTime = new time.Date(); 
