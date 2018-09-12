@@ -4,16 +4,14 @@ phases:
     commands:
       - aws cloudformation package --template-file ./build/templates/main.yaml --s3-bucket cicd-testing-serverless --output-template-file outputSamTemplate.yaml
       - ls -al
+      - rm -rf node_modules
   pre_build:
     commands:
       - ls -al
-      - cp -rL node_modules node_modules2
-      - rm -rf node_modules
-      - mv node_modules2 node_modules
-      - npm install
+      - yarn install
   build:
     commands:
-      - npm run build
+      - yarn build
 artifacts:
   type: zip
   files:
