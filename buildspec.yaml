@@ -17,7 +17,6 @@ phases:
     commands:
       - ls -al
       - npm run install-build
-      - cd ./build/src/ && ls -al
 artifacts:
   type: zip
   files:
