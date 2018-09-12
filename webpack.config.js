@@ -32,6 +32,18 @@ module.exports = {
   devtool: 'source-map',
   module:{
     rules:[
+    {
+        "test": /\.js$/,
+        "exclude": /node_modules/,
+        "use": {
+            "loader": "babel-loader",
+            "options": {
+                "presets": [
+                    "env"
+                ]
+            }
+        }
+    },
       {
         test: /\.ya?ml$/,
         use: {
@@ -43,7 +55,7 @@ module.exports = {
             // Allows the use of the `!import <file>` type without assigning it to a
             // key. Using this will cause the target's file content to be inserted at
             // the import location.
-            importRoot: false,
+            importRoot: true,
       
             // Allows the use of the `!import <file>` type with assigned to a key.
             // Settings this and the `importRoot` options to false will result in a

@@ -1,26 +1,26 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Transform: AWS::Serverless-2016-10-31
-Description: Outputs the time
+Transform: 'AWS::Serverless-2016-10-31'
+Description: "Outputs the time"
 Resources:
   TimeFunction:
-    Type: AWS::Serverless::Function
+    Type: "AWS::Serverless::Function"
     Properties:
-      FunctionName: TimeFunction
-      Description: this is a desc
+      FunctionName: "TimeFunction"
+      Description: "this is a desc"
       MemorySize: 128
       Timeout: 3
-      Handler: index.handler
-      Runtime: nodejs8.10
-      CodeUri: ../codebase/timerFunction
+      Handler: "index.handler"
+      Runtime: "nodejs8.10"
+      CodeUri: "../codebase/timerFunction"
   timeApi:  
-    Type: AWS::ApiGateway::RestApi
+    Type: "AWS::ApiGateway::RestApi"
     Properties:
-      Name: timeApi
-      Description: this is a des for API
+      Name: "timeApi"
+      Description: "this is a des for API"
       FailOnWarnings: true
-      ApiKeySourceType: AUTHORIZER
+      ApiKeySourceType: "AUTHORIZER"
       Parameters:
-        endpointConfigurationTypes: EDGE
+        endpointConfigurationTypes: "EDGE"
   timeApiResource:
     Type: "AWS::ApiGateway::Resource"
     Properties:
@@ -30,27 +30,27 @@ Resources:
           - "RootResourceId"
       PathPart: "stage"
       RestApiId:
-        Ref: timeApi
+        Ref: "timeApi"
   timeApitMethod:
     Type: "AWS::ApiGateway::Method"
     Properties:
       HttpMethod: "GET"
       AuthorizationType: "NONE"
       ResourceId:
-        Ref: timeApiResource
+        Ref: "timeApiResource"
       RestApiId:
-        Ref: timeApi
+        Ref: "timeApi"
       Integration:
         Type: "AWS"
         Uri:
           Fn::Sub: "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${TimeFunction.Arn}/invocations"
         IntegrationHttpMethod: "GET"
   timeApiDeploymentStage: 
-    Type: AWS::ApiGateway::Deployment
+    Type: "AWS::ApiGateway::Deployment"
     Properties:
       RestApiId:
-        Ref: timeApi
-      Description: Staging deployment of our Api
-      StageName: Stage
+        Ref: "timeApi"
+      Description: "Staging deployment of our Api"
+      StageName: "Stage"
     
     
