@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CleanAfterEmitWebpackPlugin = require('clean-after-emit-webpack-plugin');
 const {Type} = require('js-yaml');
 const fs = require('fs');
+const nodeExternals = require('webpack-node-externals');
 
 
 const makeObject = (array)=>array.reduce((acc, item) => {
