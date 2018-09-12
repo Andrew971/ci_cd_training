@@ -145,7 +145,6 @@ module.exports = {
     // directories where to look for modules
     extensions: [".js", ".json", ".jsx", ".yaml", "yml"]
   },
-  externals: {
-    externals: [nodeExternals()] // exclude external modules
-  }
+  externals:  [nodeExternals()] // exclude external modules
+  
 };
