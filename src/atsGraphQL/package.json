@@ -38,6 +38,7 @@
   "dependencies": {
     "apollo-server-lambda": "^2.0.0-xrc.11",
     "aws-sdk": "^2.294.0",
+    "fn": "^0.2.0",
     "graphql": "^0.13.2",
     "jsonwebtoken": "^8.3.0",
     "uuid": "^3.2.1"

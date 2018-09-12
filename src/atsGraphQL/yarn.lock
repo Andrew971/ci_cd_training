@@ -301,6 +301,10 @@ fast-json-stable-stringify@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/fast-json-stable-stringify/-/fast-json-stable-stringify-2.0.0.tgz#d5142c0caee6b1189f87d3a76111064f86c8bbf2"
 
+fn@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/fn/-/fn-0.2.0.tgz#25d4516cec2b6c4ca89c7aa88c96048a99d20db3"
+
 function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
