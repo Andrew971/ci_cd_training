@@ -28,14 +28,12 @@ const entryObject = Object.assign(templateObject, srcObject);
 
 module.exports = {
   mode: "production",
-  entry: {
-    './output.yml': './templates/index.yaml'
-  },
+  entry: entryObject,
   output: {
     filename: '[name]',
     path: path.resolve(__dirname, 'build'),
-    // library: "[name]",
-    // libraryTarget: "commonjs2",
+    library: "[name]",
+    libraryTarget: "commonjs2",
   },
   target: 'node',
   node: {
@@ -46,7 +44,7 @@ module.exports = {
     new CleanWebpackPlugin(['build']),
     new CleanAfterEmitWebpackPlugin({
       paths: [
-        path.resolve(__dirname, "build/output.yml"),
+        path.resolve(__dirname, "build/templates/output.yml"),
         path.resolve(__dirname, "build/src/*/output.json"),
       ],
     })
@@ -54,36 +52,36 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
-      // {
-      //   test: /\.json$/,
-      //   exclude: /node_modules/,
-      //   type: "javascript/auto",
-      //   use: { loader: 'file-loader',
-      //   options:{
-      //     name : '[path]package.[ext]',
-      //     emitFile: true
-      //   }
-      //   },
-      // },
+      {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        type: "javascript/auto",
+        use: { loader: 'file-loader',
+        options:{
+          name : '[path]package.[ext]',
+          emitFile: true
+        }
+        },
+      },
       {
         test: /\.mjs$/,
         include: /node_modules/,
         type: "javascript/auto",
       },
-      // {
-      //   "test": /\.jsx?$/,
-      //   include: [path.resolve(__dirname, "src")],
-      //   exclude: [path.resolve(__dirname, "node_modules")],
-      //   "use": [
-      //     {
-      //       "loader": "babel-loader",
-      //       "options": {
-      //         "presets": ["@babel/preset-env"],
-      //         plugins: ['syntax-flow', 'transform-flow-strip-types']
-      //       }
-      //     }
-      //   ],
-      // }, 
+      {
+        "test": /\.jsx?$/,
+        include: [path.resolve(__dirname, "src")],
+        exclude: [path.resolve(__dirname, "node_modules")],
+        "use": [
+          {
+            "loader": "babel-loader",
+            "options": {
+              "presets": ["@babel/preset-env"],
+              plugins: ['syntax-flow', 'transform-flow-strip-types']
+            }
+          }
+        ],
+      }, 
       {
         test: /\.ya?ml$/,
         include: [path.resolve(__dirname, "templates")],
@@ -147,6 +145,6 @@ module.exports = {
     extensions: [".js", ".json", ".jsx", ".yaml", "yml"]
   },
   externals: {
-    // bindings: 'require("bindings")'
+    externals: [nodeExternals()] // exclude external modules
   }
 };
