@@ -1,6 +1,6 @@
-const { ApolloServer } = require('apollo-server-lambda');
-const {typeDefs,resolvers} = require('./graphQL')
-
+import { ApolloServer } from 'apollo-server-lambda';
+import {typeDefs,resolvers} from './graphQL';
+//testing my graphQl
 const graphQL = {
   typeDefs,
   resolvers

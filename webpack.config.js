@@ -4,17 +4,20 @@ const glob = require('glob');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CleanAfterEmitWebpackPlugin = require('clean-after-emit-webpack-plugin');
 const {Type} = require('js-yaml');
+const fs = require('fs');
 
-let types = [];
 
-const entryArray = glob.sync('./src/*/index.js');
-console.log(entryArray)
-const srcObject = entryArray.reduce((acc, item) => {
-  const name = item;
+const makeObject = (array)=>array.reduce((acc, item) => {
+  console.log(item.includes('/package.json'))
+  const name = item.includes('/package.json') ? item.replace('/package.json',"/output.json"):item ;
   acc[name] = item;
 
   return acc;
 }, {});
+
+const srcIndex = glob.sync('./src/*/index.js');
+const srcPack = glob.sync('./src/*/package.json');
+const srcObject = Object.assign(makeObject(srcPack), makeObject(srcIndex)) ;
 
 const templateObject = {
   './templates/output.yml': './templates/index.yaml'
@@ -28,8 +31,9 @@ module.exports = {
   entry: entryObject,
   output: {
     filename: '[name]',
-    path: path.resolve(__dirname, 'build')
-
+    path: path.resolve(__dirname, 'build'),
+    library: "[name]",
+    libraryTarget: "commonjs2",
   },
   target: 'node',
   node: {
@@ -37,14 +41,28 @@ module.exports = {
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    new CleanWebpackPlugin(['build','dist']),
+    new CleanWebpackPlugin(['build']),
     new CleanAfterEmitWebpackPlugin({
-      paths: [path.resolve(__dirname, "build/templates/output.yml")],
+      paths: [
+        path.resolve(__dirname, "build/templates/output.yml"),
+        path.resolve(__dirname, "build/src/*/output.json"),
+      ],
     })
     ],
   devtool: 'source-map',
   module: {
     rules: [
+      {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        type: "javascript/auto",
+        use: { loader: 'file-loader',
+        options:{
+          name : '[path]package.[ext]',
+          emitFile: true
+        }
+        },
+      },
       {
         test: /\.mjs$/,
         include: /node_modules/,
@@ -58,11 +76,13 @@ module.exports = {
           {
             "loader": "babel-loader",
             "options": {
-              "presets": ["@babel/preset-env"]
+              "presets": ["@babel/preset-env"],
+              plugins: ['syntax-flow', 'transform-flow-strip-types']
             }
           }
-        ]
-      }, {
+        ],
+      }, 
+      {
         test: /\.ya?ml$/,
         include: [path.resolve(__dirname, "templates")],
         exclude: [

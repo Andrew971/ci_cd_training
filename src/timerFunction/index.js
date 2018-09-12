@@ -1,4 +1,4 @@
-//testing my function
+//testing my function with babel
 exports.handler = (event, context, callback) => {
     var currentTime = new time.Date(); 
     currentTime.setTimezone("America/Los_Angeles");
