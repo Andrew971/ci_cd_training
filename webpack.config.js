@@ -45,9 +45,6 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
-      // {   test: /\.json$/,   type: 'javascript/dynamic', // only for webpack 4+
-      // use: [{ loader: 'json-partial-loader' }], }, {   test: /\.yaml$/,   use: [
-      //  { loader: 'json-loader' },     { loader: 'yaml-loader' },   ], },
       {
         "test": /\.jsx?$/,
         include: [path.resolve(__dirname, "src")],
