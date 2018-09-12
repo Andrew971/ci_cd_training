@@ -8,10 +8,10 @@ phases:
   pre_build:
     commands:
       - ls -al
-      - yarn install
+      - npm install
   build:
     commands:
-      - yarn build
+      - npm run build
 artifacts:
   type: zip
   files:
