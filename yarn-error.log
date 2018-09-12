@@ -1,0 +1,41 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.7.0/libexec/bin/yarn.js add swagger-merger
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Postgres.app/Contents/Versions/latest/bin:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  9.4.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/swagger-merger: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/Cellar/yarn/1.7.0/libexec/lib/cli.js:135339:19)
+      at ontimeout (timers.js:458:11)
+      at tryOnTimeout (timers.js:296:5)
+      at Timer.listOnTimeout (timers.js:259:5)
+
+npm manifest: 
+  {
+    "name": "aws_ci_lambda",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
