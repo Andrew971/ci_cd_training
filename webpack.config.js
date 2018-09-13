@@ -22,15 +22,15 @@ const srcPack = glob.sync('./src/*/package.json');
 const srcObject = Object.assign(makeObject(srcPack), makeObject(srcIndex)) ;
 
 const templateObject = {
-  './templates/output.yml': './templates/index.yaml'
+  './output.yml': './templates/index.yaml'
 }
-const entryObject = Object.assign(templateObject, srcObject);
+// const entryObject = Object.assign(templateObject, srcObject);
 
-// console.log('object:', entryObject)
+console.log('object:', templateObject)
 
 module.exports = {
   mode: "production",
-  entry: entryObject,
+  entry: templateObject,
   output: {
     filename: '[name]',
     path: path.resolve(__dirname, 'build'),
@@ -46,7 +46,7 @@ module.exports = {
     new CleanWebpackPlugin(['build']),
     new CleanAfterEmitWebpackPlugin({
       paths: [
-        path.resolve(__dirname, "build/templates/output.yml"),
+        path.resolve(__dirname, "build/output.yml"),
         path.resolve(__dirname, "build/src/*/output.json"),
       ],
     })
@@ -94,7 +94,7 @@ module.exports = {
         use: [
           { loader: 'file-loader',
           options:{
-            name : '[path]main.[ext]',
+            name : 'main.[ext]',
             emitFile: true
           }
           },
