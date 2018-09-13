@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "babel": "rm -rvf dist && ./node_modules/.bin/babel  ./ --o -d ./build"
+    "babel": "rm -rvf ./build && ./node_modules/.bin/babel  ./ --o -d ./build"
   },
   "keywords": [],
   "author": "",

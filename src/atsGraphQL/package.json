@@ -28,7 +28,7 @@
     "exclude": "-x version/* -x *.yml -x .serverless/*"
   },
   "scripts": {
-    "babel": "rm -rvf ./dist && ./node_modules/.bin/babel  ./ --o -d ./build",
+    "babel": "rm -rvf ./build && ./node_modules/.bin/babel  ./ --o -d ./build",
     "zip-lambda": "zip -r ./version/atsGraphQL-v$npm_package_version.zip ./* $npm_package_config_exclude",
     "deploy-lambda": "yarn zip-lambda && aws lambda update-function-code --function-name $npm_package_config_lambda_name  --zip-file fileb://$npm_package_config_lambda_file --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region",
     "batch-write": "aws dynamodb batch-write-item --request-items $npm_package_config_dynamodb_batch-write-file --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region ",
