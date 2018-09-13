@@ -12,10 +12,11 @@ fs.readdirSync(lib)
     var modPath = join(lib, mod)
 // ensure path has package.json
 if (!fs.existsSync(join(modPath, 'package.json'))) return
-
+  console.log(modPath)
 // npm binary based on OS
-var npmCmd = os.platform().startsWith('win') ? 'npm.cmd' : 'npm'
+var npmCmd = os.platform().startsWith('win') ? 'npm.cmd' : 'npm';
 
+cp.spawn('rm', ['-rvf','node_modules'], {input:"node_modules", env: process.env, cwd: modPath, stdio: 'inherit' })
 // install folder
-cp.spawn(npmCmd, ['i'], { env: process.env, cwd: modPath, stdio: 'inherit' })
+cp.spawn(npmCmd, ['install'], { env: process.env, cwd: modPath, stdio: 'inherit' })
 })
