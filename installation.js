@@ -19,6 +19,6 @@ var npmCmd = os.platform().startsWith('win') ? 'npm.cmd' : 'npm';
 cp.spawn('rm', ['-rvf','node_modules'], {input:"node_modules", env: process.env, cwd: modPath, stdio: 'inherit' })
 // install folder
 cp.spawn(npmCmd, ['install'], { env: process.env, cwd: modPath, stdio: 'inherit' })
-cp.spawn(npmCmd, ['babel'], { env: process.env, cwd: modPath, stdio: 'inherit' })
+cp.spawn(npmCmd, ['run','babel'], { env: process.env, cwd: modPath, stdio: 'inherit' })
 // cp.spawn(npmCmd, ['rebuild'], { env: process.env, cwd: modPath, stdio: 'inherit' })
 })
