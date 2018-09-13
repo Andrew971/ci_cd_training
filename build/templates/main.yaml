@@ -11,7 +11,7 @@ Resources:
       Timeout: 3
       Handler: index.handler
       Runtime: nodejs8.10
-      CodeUri: ../src/atsGraphQL
+      CodeUri: ../src/timerFunction
   timeApi:
     Type: 'AWS::ApiGateway::RestApi'
     Properties:

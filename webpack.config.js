@@ -6,6 +6,7 @@ const CleanAfterEmitWebpackPlugin = require('clean-after-emit-webpack-plugin');
 const {Type} = require('js-yaml');
 const fs = require('fs');
 const nodeExternals = require('webpack-node-externals');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 
 const makeObject = (array)=>array.reduce((acc, item) => {
@@ -70,7 +71,7 @@ module.exports = {
         type: "javascript/auto",
       },
       {
-        "test": /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         include: [path.resolve(__dirname, "src")],
         exclude: [path.resolve(__dirname, "node_modules")],
         "use": [
@@ -93,7 +94,7 @@ module.exports = {
         use: [
           { loader: 'file-loader',
           options:{
-            name : 'main.[ext]',
+            name : '[path]main.[ext]',
             emitFile: true
           }
           },
@@ -145,6 +146,12 @@ module.exports = {
     // directories where to look for modules
     extensions: [".js", ".json", ".jsx", ".yaml", "yml"]
   },
-  externals:  [nodeExternals()] // exclude external modules
-  
+  externals:  [nodeExternals()] ,// exclude external modules
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        parallel: true
+      })
+    ]
+  }
 };
