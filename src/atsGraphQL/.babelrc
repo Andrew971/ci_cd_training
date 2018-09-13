@@ -1,0 +1,4 @@
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": ["syntax-flow", "transform-flow-strip-types","@babel/plugin-proposal-object-rest-spread","@babel/plugin-transform-runtime"]
+}

@@ -28,12 +28,15 @@
     "exclude": "-x version/* -x *.yml -x .serverless/*"
   },
   "scripts": {
+    "babel": "rm -rvf ./dist && ./node_modules/.bin/babel  ./ --o -d ./build",
     "zip-lambda": "zip -r ./version/atsGraphQL-v$npm_package_version.zip ./* $npm_package_config_exclude",
     "deploy-lambda": "yarn zip-lambda && aws lambda update-function-code --function-name $npm_package_config_lambda_name  --zip-file fileb://$npm_package_config_lambda_file --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region",
     "batch-write": "aws dynamodb batch-write-item --request-items $npm_package_config_dynamodb_batch-write-file --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region ",
     "create-table": "aws dynamodb create-table --table-name $npm_package_config_dynamodb_table --attribute-definitions AttributeName=$npm_package_config_dynamodb_primary-key,AttributeType=S --key-schema AttributeName=$npm_package_config_dynamodb_primary-key,KeyType=HASH --provisioned-throughput ReadCapacityUnits=$npm_package_config_dynamodb_readCapacity,WriteCapacityUnits=$npm_package_config_dynamodb_writeCapacity --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region",
     "delete-table": "aws dynamodb delete-table --table-name $npm_package_config_dynamodb_table --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region",
     "update-table": "aws dynamodb update-table --table-name $npm_package_config_dynamodb_table --attribute-definitions AttributeName=$npm_package_config_dynamodb_primary-key,AttributeType=S --provisioned-throughput ReadCapacityUnits=$npm_package_config_dynamodb_readCapacity,WriteCapacityUnits=$npm_package_config_dynamodb_writeCapacity --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region"
+    
+
   },
   "dependencies": {
     "apollo-server-lambda": "^2.0.0-xrc.11",
@@ -44,6 +47,14 @@
     "uuid": "^3.2.1"
   },
   "devDependencies": {
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0"
   }
 }
