@@ -35,8 +35,6 @@
     "create-table": "aws dynamodb create-table --table-name $npm_package_config_dynamodb_table --attribute-definitions AttributeName=$npm_package_config_dynamodb_primary-key,AttributeType=S --key-schema AttributeName=$npm_package_config_dynamodb_primary-key,KeyType=HASH --provisioned-throughput ReadCapacityUnits=$npm_package_config_dynamodb_readCapacity,WriteCapacityUnits=$npm_package_config_dynamodb_writeCapacity --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region",
     "delete-table": "aws dynamodb delete-table --table-name $npm_package_config_dynamodb_table --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region",
     "update-table": "aws dynamodb update-table --table-name $npm_package_config_dynamodb_table --attribute-definitions AttributeName=$npm_package_config_dynamodb_primary-key,AttributeType=S --provisioned-throughput ReadCapacityUnits=$npm_package_config_dynamodb_readCapacity,WriteCapacityUnits=$npm_package_config_dynamodb_writeCapacity --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region"
-    
-
   },
   "dependencies": {
     "apollo-server-lambda": "^2.0.0-xrc.11",
