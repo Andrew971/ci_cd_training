@@ -3,9 +3,9 @@ phases:
   install:
     commands:
       - npm install
+      - npm run installation
       - aws cloudformation package --template-file ./build/main.yaml --s3-bucket cicd-testing-serverless --output-template-file outputSamTemplate.yaml
       - ls -al
-      - npm run installation
   pre_build:
     commands:
       - npm run build
