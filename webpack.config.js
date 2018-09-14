@@ -70,20 +70,19 @@ module.exports = {
         include: /node_modules/,
         type: "javascript/auto",
       },
-      // {
-      //   test: /\.(js|jsx)$/,
-      //   include: [path.resolve(__dirname, "src")],
-      //   exclude: [path.resolve(__dirname, "node_modules")],
-      //   "use": [
-      //     {
-      //       "loader": "babel-loader",
-      //       "options": {
-      //         "presets": ["@babel/preset-env"],
-      //         plugins: ['syntax-flow', 'transform-flow-strip-types']
-      //       }
-      //     }
-      //   ],
-      // }, 
+      {
+        test: /\.(js|jsx)$/,
+        include: [path.resolve(__dirname, "src")],
+        exclude: [path.resolve(__dirname, "node_modules")],
+        "use": [
+          {
+            "loader": require.resolve('babel-loader'),
+            "options": {
+              "presets": ["@babel/preset-env"],
+            }
+          }
+        ],
+      }, 
       {
         test: /\.ya?ml$/,
         include: [path.resolve(__dirname, "templates")],
