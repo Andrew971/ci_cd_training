@@ -35,13 +35,16 @@ module.exports = {
     filename: '[name]',
     path: path.resolve(__dirname, 'build'),
     library: "[name]",
-    libraryTarget: "commonjs2",
+    libraryTarget: "umd",
   },
   target: 'node',
   node: {
     fs: 'empty'
   },
   plugins: [
+    new UglifyJsPlugin({
+      parallel: true
+    }),
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(['build']),
     new CleanAfterEmitWebpackPlugin({
