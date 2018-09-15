@@ -17,20 +17,20 @@ const makeObject = (array)=>array.reduce((acc, item) => {
   return acc;
 }, {});
 
-// const srcIndex = glob.sync('./src/*/index.js');
-// const srcPack = glob.sync('./src/*/package.json');
-// const srcObject = Object.assign(makeObject(srcPack), makeObject(srcIndex)) ;
+const srcIndex = glob.sync('./src/*/index.js');
+const srcPack = glob.sync('./src/*/package.json');
+const srcObject = Object.assign(makeObject(srcPack), makeObject(srcIndex)) ;
 
 const templateObject = {
   './output.yml': './templates/index.yaml'
 }
-// const entryObject = Object.assign(templateObject, srcObject);
+const entryObject = Object.assign(templateObject, srcObject);
 
 console.log('object:', templateObject)
 
 module.exports = {
   mode: "production",
-  entry: templateObject,
+  entry: entryObject,
   output: {
     filename: '[name]',
     path: path.resolve(__dirname, 'build'),
@@ -47,24 +47,24 @@ module.exports = {
     new CleanAfterEmitWebpackPlugin({
       paths: [
         path.resolve(__dirname, "build/output.yml"),
-        // path.resolve(__dirname, "build/src/*/output.json"),
+        path.resolve(__dirname, "build/src/*/output.json"),
       ],
     })
     ],
   devtool: 'source-map',
   module: {
     rules: [
-      // {
-      //   test: /\.json$/,
-      //   exclude: /node_modules/,
-      //   type: "javascript/auto",
-      //   use: { loader: 'file-loader',
-      //   options:{
-      //     name : '[path]package.[ext]',
-      //     emitFile: true
-      //   }
-      //   },
-      // },
+      {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        type: "javascript/auto",
+        use: { loader: 'file-loader',
+        options:{
+          name : '[path]package.[ext]',
+          emitFile: true
+        }
+        },
+      },
       {
         test: /\.mjs$/,
         include: /node_modules/,
@@ -93,7 +93,7 @@ module.exports = {
         use: [
           { loader: 'file-loader',
           options:{
-            name : 'main.[ext]',
+            name : '[path]main.[ext]',
             emitFile: true
           }
           },
