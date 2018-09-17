@@ -2,5 +2,5 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: "Outputs the time"
 Resources: !imp ./resources/index.yaml
-Outputs: !imp ./output/index.yaml
+# Outputs: !imp ./output/index.yaml
     
