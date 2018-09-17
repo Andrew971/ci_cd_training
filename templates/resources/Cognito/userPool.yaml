@@ -1,0 +1,66 @@
+SeeFoodUserPool: 
+#https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-aliasattributes
+  Type: AWS::Cognito::UserPool
+  Properties:
+    UserPoolName: SeeFoodUserPool
+    UsernameAttributes: 
+      - phone_number
+      - email
+    AliasAttributes: 
+      - phone_number
+      - email
+      - preferred_username
+    AutoVerifiedAttributes: 
+      - email
+      - phone_number
+    AdminCreateUserConfig: 
+      AllowAdminCreateUserOnly: false
+      InviteMessageTemplate: 
+        EmailMessage: String
+        EmailSubject: String
+        SMSMessage: String
+      UnusedAccountValidityDays: 7
+    DeviceConfiguration: 
+      ChallengeRequiredOnNewDevice: true
+      DeviceOnlyRememberedOnUserPrompt: true
+    MfaConfiguration: OPTIONAL
+    EmailConfiguration: 
+      ReplyToEmailAddress: String
+      SourceArn: arn:aws:ses:us-west-2:029297860084:identity/contact@andrewsordier.com
+    EmailVerificationSubject: String
+    EmailVerificationMessage: 'Your verification code is {####}'
+    SmsAuthenticationMessage: 'Your verification code is {####}'
+    SmsVerificationMessage: 'Your verification code is {####}'
+    SmsConfiguration: 
+      ExternalId: String
+      SnsCallerArn: String
+    Policies: 
+      PasswordPolicy:
+        MinimumLength: 8
+        RequireLowercase: true
+        RequireNumbers: true
+        RequireSymbols: false
+        RequireUppercase: true
+    Schema: 
+      - AttributeDataType: String
+        DeveloperOnlyAttribute: Boolean
+        Mutable: true
+        Name: name
+        # NumberAttributeConstraints:
+        #   MaxValue: String
+        #   MinValue: String
+        StringAttributeConstraints:
+          MaxLength: String
+          MinLength: String
+        Required: true
+    # LambdaConfig: 
+    #   CustomMessage: String
+    #   DefineAuthChallenge: String
+    #   CreateAuthChallenge: String
+    #   PostAuthentication: String
+    #   PostConfirmation: String
+    #   PreAuthentication: String
+    #   PreSignUp: String
+    #   VerifyAuthChallengeResponse: String
+    UserPoolTags: 
+      projectName: SeeFood

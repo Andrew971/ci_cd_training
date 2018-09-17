@@ -1,0 +1,15 @@
+SeeFoodUserClient: 
+  Type: AWS::Cognito::UserPoolClient
+  Properties:
+      ClientName: SeeFoodApi
+      ExplicitAuthFlows: 
+        - ADMIN_NO_SRP_AUTH
+        - CUSTOM_AUTH_FLOW_ONLY
+        - USER_PASSWORD_AUTH
+      GenerateSecret: true
+      RefreshTokenValidity: 30
+      UserPoolId: !Ref SeeFoodUserPool
+      # WriteAttributes: 
+      #   - String
+      # ReadAttributes: 
+      #   - String

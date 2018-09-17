@@ -1,0 +1,14 @@
+SeeFoodUser:
+  Type: AWS::Cognito::UserPoolUser
+  Properties:
+    DesiredDeliveryMediums: 
+      - EMAIL
+      - SMS
+    ForceAliasCreation: false
+    UserAttributes: 
+      - AttributeType
+    MessageAction: String
+    Username: String
+    UserPoolId: !Ref SeeFoodUserPool
+    ValidationData: 
+      - AttributeType

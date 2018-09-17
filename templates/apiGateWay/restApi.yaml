@@ -1,8 +1,0 @@
-Type: AWS::ApiGateway::RestApi
-Properties:
-  Name: timeApi
-  Description: this is a des for API
-  FailOnWarnings: true
-  ApiKeySourceType: AUTHORIZER
-  Parameters:
-    endpointConfigurationTypes: EDGE

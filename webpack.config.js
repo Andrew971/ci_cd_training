@@ -17,20 +17,20 @@ const makeObject = (array)=>array.reduce((acc, item) => {
   return acc;
 }, {});
 
-const srcIndex = glob.sync('./src/*/index.js');
-const srcPack = glob.sync('./src/*/package.json');
-const srcObject = Object.assign(makeObject(srcPack), makeObject(srcIndex)) ;
+// const srcIndex = glob.sync('./src/*/index.js');
+// const srcPack = glob.sync('./src/*/package.json');
+// const srcObject = Object.assign(makeObject(srcPack), makeObject(srcIndex)) ;
 
 const templateObject = {
   './output.yml': './templates/index.yaml'
 }
-const entryObject = Object.assign(templateObject, srcObject);
+// const entryObject = Object.assign(templateObject, srcObject);
 
 console.log('object:', templateObject)
 
 module.exports = {
   mode: "production",
-  entry: entryObject,
+  entry: templateObject,
   output: {
     filename: '[name]',
     path: path.resolve(__dirname, 'build'),
@@ -57,35 +57,35 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
-      {
-        test: /\.json$/,
-        exclude: /node_modules/,
-        type: "javascript/auto",
-        use: { loader: 'file-loader',
-        options:{
-          name : '[path]package.[ext]',
-          emitFile: true
-        }
-        },
-      },
+      // {
+      //   test: /\.json$/,
+      //   exclude: /node_modules/,
+      //   type: "javascript/auto",
+      //   use: { loader: 'file-loader',
+      //   options:{
+      //     name : '[path]package.[ext]',
+      //     emitFile: true
+      //   }
+      //   },
+      // },
       {
         test: /\.mjs$/,
         include: /node_modules/,
         type: "javascript/auto",
       },
-      {
-        test: /\.(js|jsx)$/,
-        include: [path.resolve(__dirname, "src")],
-        exclude: [path.resolve(__dirname, "node_modules")],
-        "use": [
-          {
-            "loader": require.resolve('babel-loader'),
-            "options": {
-              "presets": ["@babel/preset-env"],
-            }
-          }
-        ],
-      }, 
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   include: [path.resolve(__dirname, "src")],
+      //   exclude: [path.resolve(__dirname, "node_modules")],
+      //   "use": [
+      //     {
+      //       "loader": require.resolve('babel-loader'),
+      //       "options": {
+      //         "presets": ["@babel/preset-env"],
+      //       }
+      //     }
+      //   ],
+      // }, 
       {
         test: /\.ya?ml$/,
         include: [path.resolve(__dirname, "templates")],
@@ -96,7 +96,7 @@ module.exports = {
         use: [
           { loader: 'file-loader',
           options:{
-            name : '[path]main.[ext]',
+            name : 'main.[ext]',
             emitFile: true
           }
           },

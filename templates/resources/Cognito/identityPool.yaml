@@ -1,0 +1,27 @@
+SeeFoodIdentityPool:
+  Type: AWS::Cognito::IdentityPool
+  Properties:
+    IdentityPoolName: SeeFoodIdentityPool
+    AllowUnauthenticatedIdentities: false
+    DeveloperProviderName: SeeFood
+    SupportedLoginProviders: 
+      Facebook: graph.facebook.com
+      Google: accounts.google.com
+    CognitoIdentityProviders: 
+      - ClientId: !Ref SeeFoodUserClient
+        ProviderName: !Ref SeeFoodUserPool
+        ServerSideTokenCheck: Boolean
+    # SamlProviderARNs: 
+    #   - String
+    # OpenIdConnectProviderARNs: 
+    #   - String
+    # CognitoStreams: 
+    #   - RoleArn: String
+    #     StreamingStatus: String
+    #     StreamName: String
+    # PushSync: 
+    #   - ApplicationArns: 
+    #       - String
+    #     RoleArn: String
+    CognitoEvents: 
+      String: String

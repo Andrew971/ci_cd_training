@@ -1,0 +1,10 @@
+TimeFunction:
+  Type: "AWS::Serverless::Function"
+  Properties:
+    FunctionName: "TimeFunction"
+    Description: "this is a desc"
+    MemorySize: 128
+    Timeout: 3
+    Handler: "index.handler"
+    Runtime: "nodejs8.10"
+    CodeUri: "../src/timerFunction/"
