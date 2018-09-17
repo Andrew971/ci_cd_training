@@ -1,4 +1,4 @@
 !imp ./userPool.yaml
-# !imp ./userClient.yaml
+!imp ./userClient.yaml
 # !imp ./identityPool.yaml
 
