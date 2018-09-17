@@ -12,7 +12,7 @@ SeeFoodUserPool:
       - preferred_username
     AutoVerifiedAttributes: 
       - email
-      - phone_number
+      # - phone_number
     AdminCreateUserConfig: 
       AllowAdminCreateUserOnly: false
       InviteMessageTemplate: 
@@ -23,7 +23,7 @@ SeeFoodUserPool:
     DeviceConfiguration: 
       ChallengeRequiredOnNewDevice: true
       DeviceOnlyRememberedOnUserPrompt: true
-    MfaConfiguration: OPTIONAL
+    MfaConfiguration: OFF
     # EmailConfiguration: 
     #   ReplyToEmailAddress: String
     #   SourceArn: arn:aws:ses:us-west-2:029297860084:identity/contact@andrewsordier.com
