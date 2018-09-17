@@ -25,5 +25,5 @@ SeeFoodIdentityPool:
     #   - ApplicationArns: 
     #       - String
     #     RoleArn: String
-    CognitoEvents: 
-      String: String
+    # CognitoEvents: 
+    #   String: String
