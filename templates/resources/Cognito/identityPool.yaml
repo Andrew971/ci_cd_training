@@ -8,8 +8,10 @@ SeeFoodIdentityPool:
       Facebook: graph.facebook.com
       Google: accounts.google.com
     CognitoIdentityProviders: 
-      - ClientId: !Ref SeeFoodUserClient
-        ProviderName: !Ref SeeFoodUserPool
+      - ClientId: 
+          Ref: SeeFoodUserClient
+        ProviderName: 
+          Ref: SeeFoodUserPool
         ServerSideTokenCheck: Boolean
     # SamlProviderARNs: 
     #   - String

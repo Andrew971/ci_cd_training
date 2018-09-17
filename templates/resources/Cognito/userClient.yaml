@@ -8,7 +8,8 @@ SeeFoodUserClient:
         - USER_PASSWORD_AUTH
       GenerateSecret: true
       RefreshTokenValidity: 30
-      UserPoolId: !Ref SeeFoodUserPool
+      UserPoolId: 
+        Ref: SeeFoodUserPool
       # WriteAttributes: 
       #   - String
       # ReadAttributes: 

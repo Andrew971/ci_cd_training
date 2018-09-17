@@ -9,6 +9,7 @@ SeeFoodUser:
       - AttributeType
     MessageAction: String
     Username: String
-    UserPoolId: !Ref SeeFoodUserPool
+    UserPoolId: 
+      Ref: SeeFoodUserPool
     ValidationData: 
       - AttributeType
