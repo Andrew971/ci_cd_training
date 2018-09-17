@@ -4,12 +4,12 @@ SeeFoodUserPool:
   Properties:
     UserPoolName: SeeFoodUserPool
     UsernameAttributes: 
-      - phone_number
+      # - phone_number
       - email
     AliasAttributes: 
-      - phone_number
+      # - phone_number
       - email
-      - preferred_username
+      # - preferred_username
     AutoVerifiedAttributes: 
       - email
       - phone_number
