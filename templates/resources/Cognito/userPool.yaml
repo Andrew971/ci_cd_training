@@ -50,8 +50,8 @@ SeeFoodUserPool:
         #   MaxValue: String
         #   MinValue: String
         StringAttributeConstraints:
-          MaxLength: String
-          MinLength: String
+          MaxLength: '250'
+          MinLength: '4'
         Required: true
     # LambdaConfig: 
     #   CustomMessage: String
