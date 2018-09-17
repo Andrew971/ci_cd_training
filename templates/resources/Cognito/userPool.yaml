@@ -31,9 +31,9 @@ SeeFoodUserPool:
     EmailVerificationMessage: 'Your verification code is {####}'
     SmsAuthenticationMessage: 'Your verification code is {####}'
     SmsVerificationMessage: 'Your verification code is {####}'
-    SmsConfiguration: 
-      ExternalId: String
-      SnsCallerArn: String
+    # SmsConfiguration: 
+    #   ExternalId: String
+    #   SnsCallerArn: String
     Policies: 
       PasswordPolicy:
         MinimumLength: 8
