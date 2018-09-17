@@ -43,7 +43,7 @@ SeeFoodUserPool:
         RequireUppercase: true
     Schema: 
       - AttributeDataType: String
-        DeveloperOnlyAttribute: Boolean
+        DeveloperOnlyAttribute: false
         Mutable: true
         Name: name
         # NumberAttributeConstraints:
