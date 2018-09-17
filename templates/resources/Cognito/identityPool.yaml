@@ -12,7 +12,7 @@ SeeFoodIdentityPool:
           Ref: SeeFoodUserClient
         ProviderName: 
           Ref: SeeFoodUserPool
-        ServerSideTokenCheck: Boolean
+        ServerSideTokenCheck: true
     # SamlProviderARNs: 
     #   - String
     # OpenIdConnectProviderARNs: 
