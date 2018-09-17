@@ -16,9 +16,9 @@ SeeFoodUserPool:
     AdminCreateUserConfig: 
       AllowAdminCreateUserOnly: false
       InviteMessageTemplate: 
-        EmailMessage: 'Your verification code is {####}'
+        EmailMessage: 'Your verification code is {####} and username is {username}'
         EmailSubject: Invite
-        SMSMessage: 'Your verification code is {####}'
+        SMSMessage: 'Your verification code is {####} and username is {username}'
       UnusedAccountValidityDays: 7
     DeviceConfiguration: 
       ChallengeRequiredOnNewDevice: true
@@ -28,9 +28,9 @@ SeeFoodUserPool:
     #   ReplyToEmailAddress: String
     #   SourceArn: arn:aws:ses:us-west-2:029297860084:identity/contact@andrewsordier.com
     EmailVerificationSubject: Verification
-    EmailVerificationMessage: 'Your verification code is {####} and username is {username}'
-    SmsAuthenticationMessage: 'Your verification code is {####} and username is {username}'
-    SmsVerificationMessage: 'Your verification code is {####} and username is {username}'
+    EmailVerificationMessage: 'Your verification code is {####}'
+    SmsAuthenticationMessage: 'Your verification code is {####}'
+    SmsVerificationMessage: 'Your verification code is {####}'
     # SmsConfiguration: 
     #   ExternalId: String
     #   SnsCallerArn: String

@@ -9,7 +9,7 @@
     "watch": "webpack --watch",
     "installation": "DIR='src/' node installation.js",
     "install-build": "DIR='build/src/' node installation.js",
-    "babelInit": "DIR='src/' node babelInit.js"
+    "babelInit": "DIR='src/' node babelInit.js",
   },
   "keywords": [],
   "author": "",
