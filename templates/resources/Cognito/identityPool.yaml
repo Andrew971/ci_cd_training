@@ -7,12 +7,12 @@ SeeFoodIdentityPool:
     SupportedLoginProviders: 
       Facebook: graph.facebook.com
       Google: accounts.google.com
-    CognitoIdentityProviders: 
-      - ClientId: 
-          Ref: SeeFoodUserClient
-        ProviderName: 
-          Ref: SeeFoodUserPool
-        ServerSideTokenCheck: true
+    # CognitoIdentityProviders: 
+    #   - ClientId: 
+    #       Ref: SeeFoodUserClient
+    #     ProviderName: 
+    #       Ref: SeeFoodUserPool
+    #     ServerSideTokenCheck: true
     # SamlProviderARNs: 
     #   - String
     # OpenIdConnectProviderARNs: 
