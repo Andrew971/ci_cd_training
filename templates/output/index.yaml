@@ -1,12 +1,15 @@
 SeeFoodUserPoolId:
-  Value: !Ref SeeFoodUserPool
+  Value: 
+    Ref: SeeFoodUserPool
   Export:
     Name: "SeeFoodUserPool::Id"
 SeeFoodUserClientId:
-  Value: !Ref SeeFoodUserClient
+  Value: 
+    Ref: SeeFoodUserClient
   Export:
     Name: "SeeFoodUserClient::Id"
 SeeFoodIdentityPoolId:
-  Value: !Ref SeeFoodIdentityPool
+  Value: 
+    Ref: SeeFoodIdentityPool
   Export:
     Name: "SeeFoodIdentityPool::Id"
