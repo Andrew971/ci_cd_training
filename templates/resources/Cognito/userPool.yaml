@@ -28,9 +28,9 @@ SeeFoodUserPool:
     #   ReplyToEmailAddress: String
     #   SourceArn: arn:aws:ses:us-west-2:029297860084:identity/contact@andrewsordier.com
     EmailVerificationSubject: Verification
-    EmailVerificationMessage: 'Your verification code is {####}'
-    SmsAuthenticationMessage: 'Your verification code is {####}'
-    SmsVerificationMessage: 'Your verification code is {####}'
+    EmailVerificationMessage: 'Your verification code is {####} and username is {username}'
+    SmsAuthenticationMessage: 'Your verification code is {####} and username is {username}'
+    SmsVerificationMessage: 'Your verification code is {####} and username is {username}'
     # SmsConfiguration: 
     #   ExternalId: String
     #   SnsCallerArn: String
